@@ -1,0 +1,33 @@
+﻿@model TakeOrderVM
+
+<section class="container">
+    <form method="post">
+        <input type="submit" class="btn btn-primary" />
+        <br/>
+        <article class="container-fluid form-group">
+            <select name="tableNo" class="form-select" aria-label="">
+                <option selected> Masa Numarası Seç </option>
+                @foreach (var item in Model.TableListVMs)
+                {
+                    <option value="@item.TableId"> @item.TableNo </option>
+                }
+            </select>
+        </article>
+        <article class="container-fluid form-group">
+            <ul class="list-group flex-column">
+                @foreach (var item in Model.ProductListVMs)
+                {
+                    <li class="list-group-item">
+                        <input id="@item.Id" name="product" class="form-check-input" value="@item.Name" type="checkbox" />
+                        <img src="@item.ImagePath" class="object-fit-contain border rounded" alt="@item.Name" width="100" height="100">
+                        <label class="form-check-label text-dark" for="@item.Id">
+                            @item.Name
+                        </label>
+                        <label for="portion text-info"> Porsiyon: </label>
+                        <input type="number" name="count" min="1" max="10">
+                    </li>
+                }
+            </ul>
+        </article>
+    </form>
+</section>

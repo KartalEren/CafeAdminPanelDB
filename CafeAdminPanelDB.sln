@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeAdminPanelDB", "CafeAdminPanelDB\CafeAdminPanelDB.csproj", "{23BE3955-E46E-4EEB-9A06-D18E24E9B6ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23BE3955-E46E-4EEB-9A06-D18E24E9B6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BE3955-E46E-4EEB-9A06-D18E24E9B6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BE3955-E46E-4EEB-9A06-D18E24E9B6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BE3955-E46E-4EEB-9A06-D18E24E9B6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C7E5387-6648-489D-B12D-57487061B004}
+	EndGlobalSection
+EndGlobal

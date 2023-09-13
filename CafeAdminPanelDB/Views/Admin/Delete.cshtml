@@ -1,0 +1,56 @@
+﻿@model ProductListVM
+
+
+
+<section class="container ">
+    <form asp-action="Delete" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="@Model.Id">
+        <center>
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">ID:</label>
+                <input asp-for="@Model.Id" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label"></label>
+                <img src="@Model.ImagePath" class="object-fit-contain border rounded-sm" alt="@Model.Name" width="50" height="50" />
+            </div>
+        </center>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Adı:</label>
+            <input asp-for="@Model.Name" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="validationCustom04" class="form-label text-danger fw-bold">Product Type</label>
+            <select asp-for="Type" class="form-select" id="validationCustom04" required>
+                <option selected>Hot Drinks</option>
+                <option value="1">Cold Drinks</option>
+                <option value="2">Dessert</option>
+                <option value="3">Food</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Ücret:</label>
+            <input asp-for="@Model.Price" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Açıklama:</label>
+            <input asp-for="@Model.Description" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+
+
+
+        <form asp-action="Delete">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index">Back to List</a>
+        </form>
+       
+
+    </form>
+
+</section>
+
+
+
+

@@ -1,0 +1,58 @@
+﻿@model OrderDetailVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="container">
+    <form method="post" class="row" enctype="multipart/form-data">
+
+
+
+        <div class="mb-3">
+            <label asp-for="@Model.ProductImage" class="form-label text-primary fw-bold">Ürün Resmi:</label>
+            <br />
+            <img src="@Model.ProductImage" width="350" height="350" class="border border-dark border-2">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş Detayı ID:</label>
+            <input asp-for="@Model.OrderDetail.ID" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş ID:</label>
+            <input asp-for="@Model.OrderDetail.OrderId" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Ürün ID:</label>
+            <input asp-for="@Model.OrderDetail.ProductId" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Ürün Adı:</label>
+            <input asp-for="@Model.ProductName" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>    
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Masa No:</label>
+            <input asp-for="@Model.TableNo" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div> 
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Miktar:</label>
+            <input asp-for="@Model.OrderDetail.Quantity" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Fiyat:</label>
+            <input asp-for="@Model.OrderDetail.UnitPrice" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Ürün Adedi:</label>
+            <input asp-for="@Model.OrderDetail.Quantity" type="text" class="form-control border border-dark border-2 text-primary" id="formGroupExampleInput" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş Tarihi:</label>
+            <input asp-for="@Model.OrderDetail.OrderDate" type="text" class="form-control border border-dark" id="formGroupExampleInput" placeholder="">
+        </div>
+
+        <button asp-action="Index" type="submit" class="btn btn-outline-primary fw-bold">LİSTEYE GERİ DÖN</button>
+
+    </form>
+</section>

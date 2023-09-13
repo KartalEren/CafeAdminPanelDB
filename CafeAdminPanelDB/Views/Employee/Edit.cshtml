@@ -1,0 +1,85 @@
+﻿@model EmployeeEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <h3 class="d-flex justify-content-center text-danger">@ViewBag.Error</h3>
+    </div>
+}
+
+<section class="container">
+    <form method="post" class="row" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="@Model.OrderDetailId"></input>
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş ID:</label>
+            <input asp-for="@Model.OrderId" type="text" class="form-control border border-dark border-2 text-primary" id="formGroupExampleInput" placeholder="Id">
+        </div>
+
+
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Ürün Fiyatı:</label>
+            <input asp-for="@Model.UnitPrice" type="text" class="form-control border border-dark border-2 text-primary" id="formGroupExampleInput" placeholder="Ücreti">
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Ürün Adedi:</label>
+            <input asp-for="@Model.Quantity" type="text" class="form-control border border-dark border-2 text-primary" id="formGroupExampleInput" placeholder="Id">
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş Tarihi:</label>
+            <input asp-for="@Model.OrderDate" type="text" class="form-control border border-dark border-2 text-primary" id="formGroupExampleInput" placeholder="Id">
+        </div>
+        <div class="mb-3" hidden>
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Sipariş ID:</label>
+            <input asp-for="@Model.OrderId" type="text" class="form-control border border-dark border-2 text-primary">
+        </div>
+
+        <div class="mb-3" hidden>
+            <label for="formGroupExampleInput" class="form-label text-primary fw-bold">Masa ID:</label>
+            <input asp-for="@Model.TableId" type="text" class="form-control border border-dark border-2 text-primary">
+        </div>
+
+        <article class="mb-3">
+            <label for="quantity" class="form-label text-primary fw-bold">Ürün Adedi:</label>
+            <input asp-for="@Model.Quantity" type="number" class="form-control border border-dark border-2 text-primary">
+        </article>
+
+        <article class="container-fluid form-group">
+            <label for="product" class="form-label text-primary fw-bold">Ürün:</label>
+            <select name="product" class="form-select border border-dark border-2 text-primary" aria-label="">
+                <option selected> </option>
+                @foreach (var item in Model.ProductListVM)
+                {
+                    <option value="@item.Id"> @item.Name </option>
+                }
+            </select>
+        </article>    @* COMBOBOX *@
+
+        <article class="container-fluid form-group">
+            <label for="tableNo" class="form-label text-primary fw-bold">Masa Numarası:</label>
+            <select name="tableNo" class="form-select border border-dark border-2 text-primary" aria-label="">
+                <option selected> </option>
+                @foreach (var item in Model.TableListVM)
+                {
+                    <option value="@item.TableId"> @item.TableNo </option>
+                }
+            </select>
+        </article> @* COMBOBOX *@
+
+
+        <button type="submit" class="btn btn-outline-primary fw-bold mt-3">GÜNCELLE</button>
+    </form>
+</section>

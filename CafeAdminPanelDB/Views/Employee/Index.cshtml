@@ -1,0 +1,46 @@
+﻿@model List<OrderDetailVM>
+
+
+
+
+
+
+<h1 class="d-flex justify-content-center"> Sipariş Listesi </h1>
+
+
+
+<p>  <a asp-action="TakeOrder" type="submit" class="btn btn-primary">Sipariş Oluştur</a></p>
+
+
+    <ul class="list-group list-group-horizontal-sm">
+     
+        <li class="list-group-item w-25 p-3">Sipariş Id</li>
+        <li class="list-group-item w-25 p-3">Masa No</li>
+        <li class="list-group-item w-25 p-3">Ürün Adı</li>
+        <li class="list-group-item w-25 p-3">İşlemler</li>
+    </ul>
+
+
+    <ul class="list-group list-group-flush">
+        @{
+            foreach (var item in Model)
+            {
+                <ul class="list-group list-group-horizontal">
+                    @*<li class="list-group-item w-25  p-3">*@
+                 
+                    <li class="list-group-item w-25 p-3">@item.OrderId</li>
+                    <li class="list-group-item w-25 p-3">@item.TableNo"</li>
+                    <li class="list-group-item w-25 p-3">@item.ProductName"</li>
+                    <li class="list-group-item w-25 p-3">
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Düzenle</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-success">Detaylar</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a>
+                    </li>
+                </ul>
+            }
+        }
+    </ul>
+
+
+
+

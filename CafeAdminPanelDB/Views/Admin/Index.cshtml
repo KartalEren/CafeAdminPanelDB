@@ -1,0 +1,56 @@
+﻿@model List<ProductListVM>
+@{
+
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CafeAdminPanel.styles.css" asp-append-version="true" />
+</head>
+<!DOCTYPE html>
+<html>
+
+
+<section>
+    <p>  <a asp-action="Create">Create New Product</a> </p>
+
+
+    <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item w-25 p-3">Resim</li>
+        <li class="list-group-item w-25 p-3">Ürün Adı</li>
+        <li class="list-group-item w-25 p-3">Ücret</li>
+        <li class="list-group-item w-25 p-3">Actions</li>
+    </ul>
+
+
+    <ul class="list-group list-group-flush">
+        @{
+            foreach (var item in Model)
+            {
+                <ul class="list-group list-group-horizontal">
+                    @*<li class="list-group-item w-25  p-3">*@
+                    <li class="list-group-item w-25 p-3"><img src="@item.ImagePath" class="object-fit-contain border rounded-sm" alt="@item.Name" width="50" height="50" /></li>
+                    <li class="list-group-item w-25 p-3">@item.Name</li>
+                    <li class="list-group-item w-25 p-3">@item.Price"</li>
+                    <li class="list-group-item w-25 p-3">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Düzenle</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Detaylar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                    </li>
+
+
+
+
+
+                </ul>
+            }
+        }
+    </ul>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</section>
+</html>
+

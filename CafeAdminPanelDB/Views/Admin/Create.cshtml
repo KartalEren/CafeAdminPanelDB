@@ -1,0 +1,48 @@
+﻿@model ProductCreateListVM
+
+
+<section class="container ">
+    <form asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        
+        <center>
+            <div class="d-grid col-4 mx-auto border border-3 ">
+                <input asp-for="Dosya" type="file" id="formFile">
+                <span asp-validation-for="Dosya" class="text-danger"></span>
+            </div>
+        </center>       
+         <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Adı:</label>
+            <input asp-for="Name" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div> 
+        <div class="mb-3">
+            <label for="validationCustom04" class="form-label text-danger fw-bold">Product Type</label>
+            <select asp-for="Type" class="form-select" id="validationCustom04" required>
+                <option selected>Hot Drinks</option>
+                <option value="1">Cold Drinks</option>
+                <option value="2">Dessert</option>
+                <option value="3">Food</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Ücret:</label>
+            <input asp-for="Price" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Açıklama:</label>
+            <input asp-for="Description" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+
+
+
+        <form asp-action="Create">
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <a asp-action="Index">Back to List</a>
+        </form>
+        
+
+    </form>
+
+</section>
+
